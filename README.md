@@ -2,8 +2,8 @@
 
 WindIQ is a wind-generation forecast accuracy dashboard for energy procurement and planning teams. It compares the forecast available before a delivery day with realized Great Britain wind generation, helping teams understand forecast error, systematic bias, and data coverage when planning procurement and balancing exposure.
 
-**Analysis period:** January 1–31, 2026 (UTC)  
-**Default decision cutoff:** 10:00 UTC on the calendar day before delivery  
+**Analysis period:** January 1–31, 2026 (UTC)
+**Default decision cutoff:** 10:00 UTC on the calendar day before delivery
 **Deployment:** No live deployment has been configured or verified.
 
 ## Data sources and comparison method
@@ -40,9 +40,7 @@ docker-compose.yml
 docs/demo-script.md
 ```
 
-## Required submission video
 
-The evaluation starts with a video, so record and include one before submitting. The [demo script](docs/demo-script.md) is designed for a single video of no more than 10 minutes: a customer-facing pilot presentation of up to five minutes, followed by a technical lead walkthrough of up to five minutes. The script is presenter guidance only; no video recording is included in this repository.
 
 ## Requirements
 
@@ -120,10 +118,4 @@ Backend settings may be provided as environment variables. If using a local `.en
 
 The UI can also change the cutoff for an analysis request. The January audited figures correspond to the default cutoff of 10:00 UTC.
 
-## Deployment
 
-No deployment credentials, provider configuration, repository remote, or live URL are present in this checkout; deployment has not been performed or verified. To deploy on a Docker host, install Docker Engine and the Compose plugin, copy the project to the host, review the cutoff/cache environment settings, then run `docker compose up -d --build`. Publish the frontend container through the host's supported container ingress or a TLS-enabled reverse proxy. The frontend image uses relative API paths; Nginx routes them to the backend over the Compose network, so the backend port does not need to be public. Confirm the deployed frontend loads, `/health` responds through the backend, and a January analysis can fetch Elexon data before describing the service as live. Provider-specific domain, firewall, TLS, and secret settings must be supplied by the deployer.
-
-## AI assistance disclosure
-
-Development used Antigravity IDE and ChatGPT (including Codex coding assistance) for implementation support, code review, debugging, and documentation. The project was also described in earlier project notes as Gemini-assisted in Antigravity; no separate model-usage logs are included here to independently attribute particular changes. The submitted implementation and reported audit results should be reviewed by the project team.
