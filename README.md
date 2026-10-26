@@ -116,6 +116,6 @@ Backend settings may be provided as environment variables. If using a local `.en
 | `CACHE_TTL_SECONDS` | `300` | In-memory Elexon response cache duration. |
 | `ELEXON_BASE_URL` | `https://data.elexon.co.uk/bmrs/api/v1` | Elexon API base URL. |
 
-The UI can also change the cutoff for an analysis request. The January audited figures correspond to the default cutoff of 10:00 UTC.
+
 
 
