@@ -4,7 +4,7 @@ WindIQ is a wind-generation forecast accuracy dashboard for energy procurement a
 
 **Analysis period:** January 1–31, 2026 (UTC)
 **Default decision cutoff:** 10:00 UTC on the calendar day before delivery
-**Deployment:** No live deployment has been configured or verified.
+
 
 ## Data sources and comparison method
 
