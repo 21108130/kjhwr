@@ -1,0 +1,27 @@
+name: windiq
+
+services:
+  backend:
+    build: ./backend
+    container_name: windiq-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DECISION_CUTOFF_HOUR_UTC=10
+      - DECISION_CUTOFF_MINUTE_UTC=0
+      - CACHE_TTL_SECONDS=300
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  frontend:
+    build: ./frontend
+    container_name: windiq-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
